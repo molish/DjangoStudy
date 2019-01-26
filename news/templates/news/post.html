@@ -1,0 +1,7 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block content %}
+    <h2 class="text_info">{{ articles.title }}</h2>
+    <h6 class="text_info">Опубликовано: {{ articles.date|date:"d-m-Y в H:i:s" }}</h6>
+    <p>{{ articles.post|safe|linebreaks }}</p>
+{% endblock %}
