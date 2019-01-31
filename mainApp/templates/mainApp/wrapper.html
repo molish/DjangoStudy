@@ -10,14 +10,17 @@
 
 <div class="jumbotron">
     <div class="container">
-      <h1>{% include "mainApp/includes/some_html.html" %}</h1>
+    <nav class="navbar navbar-dark bg-primary">
+    <p>
+        <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+        <a href="/news" class="btn btn-info btn-lg">Новости &raquo;</a>
+        <a href="/contacts" class="btn btn-info btn-lg">Контакты &raquo;</a>
+          <a href="/polls" class="btn btn-info btn-lg">голосвания &raquo;</a>
+      </p>
+    </nav>
       {% block content %}
       {% endblock %}
-      <p>
-        <a href="/" class="btn btn-success btn-lg">Главная страница</a>
-        <a href="/news" class="btn btn-primary btn-lg">Новости &raquo;</a>
-        <a href="/contacts" class="btn btn-info btn-lg">Контакты &raquo;</a>
-      </p>
+
     </div>
   </div>
   <div class="container">
