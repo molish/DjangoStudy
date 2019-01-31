@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заголовок страницы</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+</head>
+<body style="background: silver">
+
+<div class="jumbotron">
+    <div class="container">
+    <nav class="navbar navbar-dark bg-primary">
+    <p>
+        <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+        <a href="/news" class="btn btn-info btn-lg">Новости &raquo;</a>
+        <a href="/contacts" class="btn btn-info btn-lg">Контакты &raquo;</a>
+          <a href="/polls" class="btn btn-info btn-lg">голосвания &raquo;</a>
+      </p>
+    </nav>
+      {% block content %}
+      {% endblock %}
+
+
+    </div>
+  </div>
+  <div class="container">
+    <hr>
+    &copy; Все права защищены 2018
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "polls/wrapper.html" %}
+
+{% block content %}
+
+    <h1><p class="text-center">{{ poll.question }}</p></h1>
+
+{% if error_message %}<p class="text-center"><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/polls/{{ poll.id }}/vote/" method="post">
+{% csrf_token %}
+<ul class="list-group">
+{% for choice in poll.choice_set.all %}
+    <li class="list-group-item">
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ choice.choice }}</label><br />
+    </li>
+{% endfor %}
+</ul>
+<input type="submit" value="Vote" class="btn btn-outline-dark btn-lg"/>
+</form>
+
+{% endblock %}

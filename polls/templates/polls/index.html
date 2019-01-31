@@ -1,0 +1,16 @@
+{% extends "polls/wrapper.html" %}
+
+{% block content %}
+
+<div class="list-group">
+{% if latest_poll_list %}
+    <div class="list-group">
+    {% for poll in latest_poll_list %}
+        <a href="/polls/{{ poll.id }}/" class="list-group-item list-group-item-action">{{ poll.question }}</a>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% endblock %}
